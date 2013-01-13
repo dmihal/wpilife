@@ -1,0 +1,12 @@
+<h1>Parties</h1>
+<ul>
+  <% @parties.each do |party| %>
+    <li>
+      <%= party.plusminus_tally %> - <%= party.title %>
+      <br />
+      <a href="#" class="vote" data-id="<%= party.id %>" data-dir="up">This is correct</a>
+      -
+      <a href="#" class="vote" data-id="<%= party.id %>" data-dir="down">This is incorrect</a>
+    </li>
+  <% end %>
+</li>

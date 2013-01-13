@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @ride_post.title %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @ride_post.date %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @ride_post.type %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @ride_post.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_ride_post_path(@ride_post) %> |
+<%= link_to 'Back', ride_posts_path %>

@@ -1,0 +1,27 @@
+<h1>Listing classified_listings</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @classified_listings.each do |classified_listing| %>
+  <tr>
+    <td><%= classified_listing.name %></td>
+    <td><%= classified_listing.title %></td>
+    <td><%= classified_listing.content %></td>
+    <td><%= link_to 'Show', classified_listing %></td>
+    <td><%= link_to 'Edit', edit_classified_listing_path(classified_listing) %></td>
+    <td><%= link_to 'Destroy', classified_listing, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Classified listing', new_classified_listing_path %>

@@ -1,0 +1,29 @@
+<h1>Listing ride_posts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Date</th>
+    <th>Type</th>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ride_posts.each do |ride_post| %>
+  <tr>
+    <td><%= ride_post.title %></td>
+    <td><%= ride_post.date %></td>
+    <td><%= ride_post.type %></td>
+    <td><%= ride_post.body %></td>
+    <td><%= link_to 'Show', ride_post %></td>
+    <td><%= link_to 'Edit', edit_ride_post_path(ride_post) %></td>
+    <td><%= link_to 'Destroy', ride_post, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ride post', new_ride_post_path %>

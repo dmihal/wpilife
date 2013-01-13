@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WPILife</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <div id="logo">
+        <span id="wpi">Tech</span><span id="life">Life</span>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <%= link_to "Classifieds", classified_listings_path %>
+          </li>
+          <li>
+            <a href="#">Student Life</a>
+          </li>
+          <li>
+            <a href="#">Community</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div id="content-container">
+      <div id="content">
+        <div id="signin">Sign in with your wpi.edu email</div>
+        <%= yield %>
+      </div>
+    </div>
+    <footer>
+      David Mihal
+    </footer>
+  </div>
+
+</body>
+</html>

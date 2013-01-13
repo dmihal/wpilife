@@ -1,0 +1,12 @@
+<div class="hero">
+  <h2>What Is TechLife?</h2>
+  <p>TechLife is a tool to help WPI students stay connected to their community of peers on campus.</p>
+</div>
+<%= link_to "Classified Listings", classified_listings_path %>
+<%= link_to "Ride Posts", ride_posts_path %>
+
+<ul>
+  <% @classified_listings.each do |classified_listing| %>
+    <li><%= link_to classified_listing.title, classified_listing %></li>
+  <% end %>
+</li>
