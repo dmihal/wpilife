@@ -1,0 +1,30 @@
+class PostingsController < ApplicationController
+  before_filter :signed_in_user, only: [:new, :edit, :update, :destroy]
+  
+  def new
+    @posting = Posting.new
+    @errors = @posting.errors
+  end
+
+  def create
+    @posting = current_user.postings.build(params[:posting])
+    if @posting.save
+      flash[:success] = "Post created!"
+      redirect_to @posting
+    else
+      @errors = @posting.errors
+      render 'new'
+    end
+  end
+  
+  def show
+    @posting = Posting.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def index
+    @postings = Posting.paginate(page: params[:page])
+  end
+end

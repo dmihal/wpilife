@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130628162239) do
+ActiveRecord::Schema.define(:version => 20130628163844) do
+
+  create_table "postings", :force => true do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "category_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "postings", ["category_id", "created_at"], :name => "index_postings_on_category_id_and_created_at"
+  add_index "postings", ["user_id", "created_at"], :name => "index_postings_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
     t.string   "name"

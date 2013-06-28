@@ -1,6 +1,12 @@
 Wpilife::Application.routes.draw do
+  #get "postings/new"
+  #get "postings/show"
+  #get "postings/edit"
+  #get "postings/index"
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :postings
 
   root to: 'static_pages#home'
   

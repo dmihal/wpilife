@@ -1,0 +1,12 @@
+<% provide(:title, 'All postings') %>
+<h1>All Postings</h1>
+
+<%= link_to "Create Post", new_posting_path, class: "btn btn-large btn-primary" %>
+
+<%= will_paginate %>
+
+<ul class="postings">
+  <%= render @postings %>
+</ul>
+
+<%= will_paginate %>
