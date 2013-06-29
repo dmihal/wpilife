@@ -1,7 +1,9 @@
-<div class="span4">
-  <h3><%= category.name %></h3>
-  <ul class="postings">
-    <%= render category.postings.last(5) %>
-  </ul>
-  <small><%= link_to 'View All', category %></small>
+<div class="span4 category">
+  <div>
+    <h3><%= category.name %></h3>
+    <ul class="postings">
+      <%= render category.postings.last(5) %>
+    </ul>
+    <small><%= link_to 'View All', category %></small>
+  </div>
 </div>
