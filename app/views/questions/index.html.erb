@@ -1,0 +1,8 @@
+<% provide(:title, 'All questions') %>
+<h1>All Questions</h1>
+
+<ul class="questions">
+  <%= render @questions %>
+</ul>
+
+<%= link_to 'New Question', new_question_path %>

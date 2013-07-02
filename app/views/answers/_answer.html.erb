@@ -1,0 +1,16 @@
+<div class="span10 offset1 question">
+  <div class="row">
+    <div class="span3">
+      <div>
+        <section>
+          Posted by <%= answer.user.name %> <%= time_ago_in_words(answer.created_at) %> ago
+        </section>
+      </div>
+    </div>
+    <div class="span7">
+      <div>
+        <%= answer.content %>
+      </div>
+    </div>
+  </div>
+</div>

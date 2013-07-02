@@ -1,0 +1,33 @@
+<% provide(:title, @question.title) %>
+<div class="row">
+  <div class="span10 offset1 question">
+    <div class="row">
+      <div class="span3">
+        <div>
+          <section>
+            Posted by <%= @question.user.name %> <%= time_ago_in_words(@question.created_at) %> ago
+          </section>
+          <% if signed_in? && (current_user.admin? || current_user?(@question.user)) %>
+            <section>
+              <%= link_to "Edit", edit_question_path(@question), class: "btn btn-large btn-primary" %>
+              <%= link_to "Delete", @question, class: "btn btn-large btn-primary", method: :delete,
+                                        data: { confirm: "You sure?" } %>
+            </section>
+          <% end %>
+        </div>
+      </div>
+      <div class="span7">
+        <div>
+          <h4><%= @question.title %></h4>
+          <%= @question.content %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row answers">
+  <%= render @question.answers %>
+</div>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
