@@ -8,6 +8,7 @@ Wpilife::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :postings
   resources :categories
+  resources :answers
 
   root to: 'static_pages#home'
   

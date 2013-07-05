@@ -8,6 +8,9 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answers = @question.answers
+    @reply = Answer.new
+    @reply.question_id = @question.id
+    @errors = @reply.errors
   end
 
   # GET /questions/new

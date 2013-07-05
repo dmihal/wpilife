@@ -28,6 +28,24 @@
 <div class="row answers">
   <%= render @question.answers %>
 </div>
+<div class="row reply">
+  <div class="span10 offset1">
+  <h4>Got an answer</h4>
+    <% if signed_in? %>
+      <%= form_for(@reply) do |f| %>
+        <%= render 'shared/error_messages' %>
+  
+        <%= f.label :content %>
+        <%= f.text_area :content, cols: 100, rows: 10 %>
+        <br />
+        <%= hidden_field :question, :id %>
+        <%= f.submit "Post Answer", class: "btn btn-large btn-primary" %>
+      <% end %>
+    <% else %>
+      <%= link_to "Sign in to contribute!", signin_path %> 
+    <% end %>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
