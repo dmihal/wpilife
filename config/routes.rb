@@ -3,8 +3,13 @@ Wpilife::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :postings
+  resources :postings do
+    collection do
+      get 'all'
+    end
+  end
   resources :categories
+  resources :posting_categories
 
   root to: 'static_pages#home'
   

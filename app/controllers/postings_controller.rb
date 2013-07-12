@@ -8,6 +8,7 @@ class PostingsController < ApplicationController
 
   def create
     @posting = current_user.postings.build(params[:posting])
+    
     if @posting.save
       flash[:success] = "Post created!"
       redirect_to @posting
@@ -25,6 +26,12 @@ class PostingsController < ApplicationController
   end
 
   def index
+    @categories = PostingCategory.all
+    render 'posting_categories/index'
+    #@postings = Posting.paginate(page: params[:page])
+  end
+
+  def all
     @postings = Posting.paginate(page: params[:page])
   end
 end

@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+categories = PostingCategory.create([
+  {name: 'For Sale'},
+  {name: 'Want to Buy'},
+  {name: 'Appartments'},
+  {name: 'Sublets'},
+  {name: 'Jobs'}
+  ])
+
+User.create(email: 'dimihal@wpi.edu', name: "David Mihal", password: "test", password_confirmation: 'test')
