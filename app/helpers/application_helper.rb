@@ -8,4 +8,9 @@ module ApplicationHelper
       "#{page_title} | #{base_title}"
     end
   end
+  
+  def remote_hostname
+    require 'resolv'
+    Resolv.getname(request.remote_ip)
+  end
 end
