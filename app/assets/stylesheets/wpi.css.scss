@@ -12,14 +12,34 @@ body {
 header {
   margin-bottom: 10px;
 }
+#logo {
+  font-size: 24pt;
+  font-family: serif;
+  margin-top: 10px;
+  margin-left: 18px;
+  
+  #logowpi {
+    color: #880000;
+  }
+  #logolife {
+    color: #333;
+  }
+}
 .navbar-inner {
   background: #880000 !important;
   .container {
     background: #b1b1b1;
     @include linear-gradient(to top, #d0d0d0,#b1b1b1,#efefef);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    padding-top: 20px;
     /*.drop-shadow(5px,5px,5px,0.5);*/
   }
+}
+.navbar-inverse .brand, .navbar-inverse .nav > li > a {
+  color: #333;
+  text-shadow: none;
+  font-family: serif;
+  font-size: 14pt;
 }
 .footer-container {
   background: #b1b1b1;

@@ -1,7 +1,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "WPILife", '#', id: "logo" %>
+      <%= link_to root_path , id: "logo", class: "pull-left" do %>
+        <span id="logowpi">WPI</span><span id="logolife">Life</span>
+      <% end %>
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Home", root_path %></li>
