@@ -8,3 +8,13 @@
     <%= link_to "Sign in with your wpi.edu email!", signup_path, class: "btn btn-large btn-primary" %>
   <% end %>
 </div>
+
+<div class="row">
+  <div class="span3">
+    <% if remote_hostname.include? 'wpi.edu' %>
+      Help potential students! Answer some questions!
+    <% else %>
+      Potential student? Accepted student? Ask some questions & get answers from students!
+    <% end %>
+  </div>
+</div>
