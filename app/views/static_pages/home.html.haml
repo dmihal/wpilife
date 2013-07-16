@@ -1,0 +1,20 @@
+%div.center.hero-unit
+  %h1 Welcome to the WPILife
+
+  %h2 WPILife is a place where members of the WPI community come together to connect.
+  - unless signed_in?
+    = link_to "Sign in with your wpi.edu email!", signup_path, class: "btn btn-large btn-primary"
+
+%div.row
+  %div.span6.bubble
+    %div
+      %h3 Recent Postings
+      %ul.postings
+        = render @postings
+  %div.span6.bubble
+    %div
+      %h3 Posting Categories
+      %ul.unstyled
+        - @postingCategories.each do |category|
+          %li
+            = link_to category.name, category
