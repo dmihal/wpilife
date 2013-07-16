@@ -1,13 +1,19 @@
 <% provide(:title, @category.name) %>
 <div class="row">
-  <h1><%= @category.name %></h1>
-  <%= link_to "Create Post", {controller: "postings", action: "new", category: @category.id }, class: "btn btn-large btn-primary" %>
+  <div class="span12">
+    <h1><%= @category.name %></h1>
+    <%= link_to "Create Post", {controller: "postings", action: "new", category: @category.id }, class: "btn btn-large btn-primary" %>
+  </div>
 </div>
 
 <div class="row">
-  <%= will_paginate @postings %>
-  <ul class="postings">
-    <%= render @postings %>
-  </ul>
-  <%= will_paginate @postings %>
+  <div class="span12 bubble">
+    <div>
+      <%= will_paginate @postings %>
+      <ul class="postings">
+        <%= render @postings %>
+      </ul>
+      <%= will_paginate @postings %>
+    </div>
+  </div>
 </div>

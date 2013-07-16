@@ -1,0 +1,14 @@
+- provide(:title, 'All postings')
+%h1
+  All Postings
+  %small
+    = link_to "Create Post", new_posting_path #, class: "btn btn-large btn-primary"
+
+%div.row
+  %div.span12.bubble
+    %div
+      = will_paginate
+      %ul.postings
+        = render @postings
+      %ul
+      = will_paginate
