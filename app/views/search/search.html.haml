@@ -1,0 +1,16 @@
+%div.row
+  %div.span12
+    %h1 Search
+%div.row
+  %div.span10.offset1.bubble
+    %div
+      = form_tag url_for(controller: 'search', action: 'search'), method: 'get' do
+        = text_field_tag :search, params[:query]
+        %br
+        = submit_tag "Search", name: nil, class: 'btn btn-large btn-primary'
+- if params[:query]
+  %div.row
+    %div.span10.offset1.bubble
+      %div
+        %ul.postings
+          = render(@results) || "No Results"

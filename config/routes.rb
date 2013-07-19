@@ -1,5 +1,7 @@
 Wpilife::Application.routes.draw do
 
+  match '/search',  to: 'search#search'
+  match '/search/:query', to: 'search#search'
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
