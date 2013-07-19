@@ -2,20 +2,24 @@
 <div class="row">
     <h1><%= @posting.title %></h1>  
 </div>
-<div class="row">
-  <aside class="span4">
-    <section>
-      Posted by someone <%= time_ago_in_words(@posting.created_at) %> ago
-    </section>
-    <% if signed_in? && (current_user.admin? || current_user?(@posting.user)) %>
+<div class="row posting">
+  <aside class="span4 bubble">
+    <div>
       <section>
-        <%= link_to "Edit", edit_posting_path(@posting), class: "btn btn-large btn-primary" %>
-        <%= link_to "Delete", @posting, class: "btn btn-large btn-primary", method: :delete,
-                                  data: { confirm: "You sure?" } %>
+        Posted by someone <%= time_ago_in_words(@posting.created_at) %> ago
       </section>
-    <% end %>
+      <% if signed_in? && (current_user.admin? || current_user?(@posting.user)) %>
+        <section>
+          <%= link_to "Edit", edit_posting_path(@posting), class: "btn btn-large btn-primary" %>
+          <%= link_to "Delete", @posting, class: "btn btn-large btn-primary", method: :delete,
+                                    data: { confirm: "You sure?" } %>
+        </section>
+      <% end %>
+    </div>
   </aside>
-  <div class="span8">
-    <%= @posting.content %>
+  <div class="span8 bubble user-content">
+    <div>
+      <%= @posting.content %>
+    </div>
   </div>
 </div>
