@@ -1,0 +1,13 @@
+.row
+  .span4.bubble
+    %div
+      %ul
+        = render @postings, remote: true
+  .span8.bubble
+    %div
+      #noPosts
+        Select a post to view!
+      #postContainer
+        %h2
+        #postBody
+      

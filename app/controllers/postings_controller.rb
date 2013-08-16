@@ -20,6 +20,13 @@ class PostingsController < ApplicationController
   
   def show
     @posting = Posting.find(params[:id])
+    if params[:partial]
+      render :layout => false
+    end
+    respond_to do |format|
+      format.html
+      format.json { render :json => @posting }
+    end
   end
 
   def edit

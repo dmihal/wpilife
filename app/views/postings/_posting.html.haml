@@ -1,0 +1,10 @@
+%li
+  %span.content
+    - if defined? remote
+      = link_to posting.title, posting_url(posting)+'.json', remote: true, class: 'remote_posting', data: { type: "json" }
+    - else
+      = link_to posting.title, posting
+  %span.timestamp
+    Posted
+    = time_ago_in_words(posting.created_at)
+    ago.
